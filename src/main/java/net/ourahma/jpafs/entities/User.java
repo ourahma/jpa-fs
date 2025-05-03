@@ -18,6 +18,6 @@ public class User {
     private String username;
     private String password;
     @ManyToMany(mappedBy = "users",fetch = FetchType.EAGER)
-    private List<Role> roles = new ArrayList<>();
+    private List<Role> roles = new ArrayList<Role>();
 
 }
