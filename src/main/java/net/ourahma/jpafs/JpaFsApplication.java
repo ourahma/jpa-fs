@@ -45,7 +45,19 @@ public class JpaFsApplication {
             userService.addRoleToUser("user1","USER");
             userService.addRoleToUser("admin","USER");
             userService.addRoleToUser("admin","ADMIN");
+            // consulter une utilisateur
 
+            try {
+                User user = userService.authenticate("user1","123456");
+                System.out.println(user.getUserId());
+                System.out.println(user.getUsername());
+                System.out.println("Roles => ");
+                user.getRoles().forEach(role ->{
+                    System.out.println("Role =>"+role);
+                });
+            }catch (Exception e) {
+                e.printStackTrace();
+            }
         };
     }
 }
