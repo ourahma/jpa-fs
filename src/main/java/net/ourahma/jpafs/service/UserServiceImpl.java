@@ -53,7 +53,7 @@ public class UserServiceImpl implements UserService {
     Role role = this.findRoleByRoleName(roleName);
     if(user.getRoles()!=null) {
         user.getRoles().add(role);
-        // si nous avons pas inrialiser la liste roles on aura un NullPointerException
+        // si nous avons pas intialiser la liste roles on aura un NullPointerException
         //userRepository.save(user); ce n'est pas necessaire parce que on a que la methode est transactionnelle
         role.getUsers().add(user);
     }
